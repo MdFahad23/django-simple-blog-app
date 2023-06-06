@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block title %}Change User Profile{% endblock %}
+
+<div>
+  {% block body_block %} {% if change %}
+  <div class="alert alert-success">Successfully Password Change</div>
+
+  {% else %}
+
+  <h2>Change Password</h2>
+
+  <form method="POST">
+    {{form.as_p}} {% csrf_token %}
+    <button type="submit" class="btn btn-success btn-sm">
+      Change Password
+    </button>
+  </form>
+  {% endif %} {% endblock %}
+</div>
